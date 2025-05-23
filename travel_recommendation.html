@@ -1,54 +1,163 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
-    <head>
+<head>
 
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBloom</title>
 
-        <title>TravelBloom</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="style.css">
+</head>
 
-    </head>
+<body>
 
-    <body>
+    <nav>
 
-        <nav id="navbar">
+        <div id="logo">
+            <i class="fa fa-plane fa-3x logo" aria-hidden="true"></i>
+            <p class="name">TravelBloom</p>
+        </div>
 
-            <div id="logo">
-            
-                <i class="fa fa-plane logo" style="font-size:36px;"></i>
+        <div class="NavigationLinks">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact Us</a>
+        </div>
 
-                <p class="name">TravelBloom</p>
+        <div class="searchBar">
+
+            <input id="searchInput" class="searchInput" placeholder="Enter a destination or keyword" type="text">
+
+            <i class="fa fa-search searchIcon" aria-hidden="true"></i>
+
+            <button id="searchBtn" class="btn">Search</button>
+            <button id="clearBtn" class="btn">Clear</button>
+
+
+        </div>
+
+        <div id="searchDropdown">
+
+            <div class="dropdown-header">
+                <button id="closeBtn">×</button>
+            </div>
+
+            <div id="searchResults">
+                <!-- Search results will be populated here -->
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div class="mainSection">
+
+        <div class="mainPage">
+
+            <div class="socialLinks">
+
+                <div class="verticalLine"></div>
+
+                <a href="https://twitter.com/?lang=en" target="_blank">
+                    <i class="fa fa-twitter fa-2x socialIcon" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://www.facebook.com/" target="_blank">
+                    <i class="fa fa-facebook fa-2x socialIcon" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://www.instagram.com/" target="_blank">
+                    <i class="fa fa-instagram fa-2x socialIcon" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://www.youtube.com/" target="_blank">
+                    <i class="fa fa-youtube-play fa-2x socialIcon" aria-hidden="true"></i>
+                </a>
 
             </div>
 
-            <div class="NavigtionLinks">
+            <div id="home">
 
-                <a href="#home">Home</a>
+                <div class="homeContent">
 
-                <a href="#about">About Us</a>
+                    <div class="mainHomeContent">
 
-                <a href="#contact">Contact Us</a>
+                        <p class="homeSectionHeader">Explore <br>Dream <br>Destination</p>
+
+                        <p class="homeSectionDescription">
+                            It encourages exploration of unfamiliar <br>
+                            territories, embracing diverse cultures and <br>
+                            landscapes, while pursuing the desired <br>
+                            destination that captivates the heart and <br>
+                            ignites a sense of wonder.
+                        </p>
+
+                        <button class="bookBtn">Book Now</button>
+
+                    </div>
+
+                </div>
 
             </div>
 
-            <div class="searchBar">
+            <div id="about">
 
-                <input id="searchinput" placeholder="Enter a destination or keyword" type="text">
-                
-                <button id="search-btn" class="btn">Search</button>
-                
-                <button id="clear-btn" class="btn">Clear</button>
+                <p class="aboutUsHeader">About Us</p>
+
+                <div>
+
+                    <p class="aboutUsText">
+                        Welcome to TravelBloom! We are a team of passionate travel enthusiasts dedicated to providing
+                        excellent travel recommendations and experiences to our customers.
+                        Our mission is to help people discover amazing destinations around the world and create
+                        unforgettable memories.
+                        Our values include integrity, innovation, customer satisfaction, and teamwork.
+                        We believe in putting our travelers first and working together to make every journey
+                        extraordinary.
+                        Feel free to explore our website to discover your next dream destination!
+                    </p>
+
+                </div>
 
             </div>
 
-        </nav>
-        
-        
-    </body>
+            <div id="contact">
+
+                <p class="contactUsTitle">CONTACT US</p>
+
+                <div class="formSection">
+
+                    <form action="">
+                        <label class="formLabels" for="firstName">First Name</label><br>
+                        <input class="inputField" type="text" id="firstName" name="firstName"><br>
+
+                        <label class="formLabels" for="email">Email</label><br>
+                        <input class="inputField" type="email" id="email" name="email"><br>
+
+                        <label class="formLabels" for="message">Message</label><br>
+                        <textarea class="inputField textareaField" id="message" name="message" rows="4"></textarea><br>
+
+                        <button class="submitBtn" type="submit">Submit</button>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="searchResultsSection" id="searchResultsSection">
+        <!-- Dynamic search results will be displayed here -->
+    </div>
+
+    <script src="travel_recommendation.js"></script>
+
+</body>
+
 </html>

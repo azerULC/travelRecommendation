@@ -1,53 +1,234 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-*{
-    padding: 0;
-    margin: 0;
-    scroll-behavior: smooth;
-    box-sizing: border-box;
-    font-family: Ubuntu, "times new roman", times, roman, serif;
+:root {
+  --main-bg: #376a68;
+  --light-bg: #ffffff;
+  --accent: #b8d33f;
+  --text-light: #fff;
+  --text-dark: #333;
+  --font-main: 'Poppins', sans-serif;
+  --font-logo: 'Kaushan Script', cursive;
 }
 
-:root{
-    --color-bg-nav: linear-gradient(120deg, rgb(30, 62, 60),rgb(30, 62, 60) ,rgb(100, 90, 90));
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+  scroll-behavior: smooth;
 }
-
 
 body {
-    background-image: url("city.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-}
-
-#logo{
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.logo {
-    color: var(--color-bg-nav);
-    margin-left: 5px; 
-    -webkit-text-stroke: 2px white;
-    text-stroke: 2px white;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: var(--text-light);
+  min-height: 100vh;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--color-bg-nav);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  background: linear-gradient(120deg, #35615e, #266662, #e9c4c4);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  color: var(--main-bg);
+  margin-left: 5px; 
+  -webkit-text-stroke: 2px white;
+  text-stroke: 2px white;
 }
 
 .name {
-    font-family: "Kaushan Script", cursive;
-    color: white;
+  font-family: var(--font-logo);
+  font-size: 1.5rem;
+  color: var(--text-light);
 }
 
-.NavigtionLinks {
-    gap: 15px;
-    color: white;
+.NavigationLinks a {
+  margin: 0 1rem;
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.NavigationLinks a:hover {
+  color: var(--accent);
+}
+
+.searchBar {
+  background: var(--light-bg);
+  border-radius: 30px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--main-bg);
+  width: 15rem;
+}
+
+.searchInput::placeholder,
+.searchIcon {
+  color: var(--main-bg);
+}
+
+.btn {
+  background: var(--main-bg);
+  color: var(--text-light);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#searchDropdown {
+  position: fixed;
+  top: 100px;
+  right: 30px;
+  width: 28rem;
+  background: #fff;
+  color: #000;
+  padding: 1rem;
+  border-radius: 10px;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+#searchResults img {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+
+#closeBtn {
+  background: #ff4757;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.mainSection {
+  margin-top: 80px;
+  background: url("city.jpg") no-repeat center center / cover fixed;
+  min-height: 100vh;
+}
+
+.mainPage {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, #05676b, #05686b99, #05686b55, transparent);
+  padding: 2rem;
+}
+
+.socialLinks {
+  position: fixed;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.verticalLine {
+  width: 2px;
+  height: 200px;
+  background: var(--text-light);
+}
+
+.socialLinks a {
+  color: var(--text-light);
+}
+
+.socialLinks a:hover {
+  color: var(--accent);
+}
+
+#home, #about, #contact {
+  padding: 3rem 2rem;
+}
+
+.homeSectionHeader,
+.aboutUsHeader,
+.contactUsTitle {
+  font-size: 4.5rem;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.homeSectionDescription,
+.aboutUsText {
+  max-width: 600px;
+  font-size:1.5rem;
+  line-height: 1.6;
+}
+
+.bookBtn, .submitBtn {
+  background: #4caf50;
+  border: none;
+  padding: 1rem 2rem;
+  color: #fff;
+  border-radius: 5px;
+  margin-top: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.formSection {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  max-width: 500px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+#searchResultsSection {
+  display: none;
+  padding: 2rem;
+}
+
+.resultCard {
+  background: #fff;
+  color: #000;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.resultImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
